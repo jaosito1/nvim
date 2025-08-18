@@ -23,3 +23,4 @@ vim.keymap.set('v', '<leader>yy', '"+y')
 vim.keymap.set('n', '-', ':Oil<CR>')
 
 vim.keymap.set('n', '<leader>u', ':UndotreeToggle<CR> :UndotreeFocus<CR>')
+vim.keymap.set('n', '<leader>g', ':Git <CR>')

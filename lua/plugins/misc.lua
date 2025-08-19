@@ -14,6 +14,10 @@ return {
         "mbbill/undotree"
     },
     {
+        "karb94/neoscroll.nvim",
+        opts = {}
+    },
+    {
         "fatih/vim-go"
     }
 }

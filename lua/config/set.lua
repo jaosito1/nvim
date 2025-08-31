@@ -15,10 +15,11 @@ vim.o.smartindent = true
 vim.o.scrolloff = 8
 
 vim.o.cursorline = true
-vim.o.wrap = false 
-vim.o.signcolumn = 'yes' 
+vim.o.wrap = false
+vim.o.signcolumn = "yes"
+vim.o.showmode = false
 
-vim.o.colorcolumn = '80'
+vim.o.colorcolumn = "80"
 
 vim.o.hlsearch = false
 vim.o.incsearch = true

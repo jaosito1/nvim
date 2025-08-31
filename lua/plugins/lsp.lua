@@ -1,0 +1,38 @@
+return {
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		{ "mason-org/mason.nvim", opts = {} },
+		{
+			"mason-org/mason-lspconfig.nvim",
+			opts = {
+				ensure_installed = {
+					"lua_ls",
+					"gopls",
+				},
+			},
+		},
+		{ "hrsh7th/nvim-cmp" },
+	},
+
+	config = function()
+		vim.diagnostic.config({
+			virtual_text = true,
+			severity_sort = true,
+			float = { border = "rounded", source = "if_many" },
+			underline = false,
+		})
+
+		vim.api.nvim_create_autocmd("LspAttach", {
+			callback = function(event)
+				local map = function(keys, action)
+					vim.keymap.set("n", keys, action, { buffer = event.buf })
+				end
+
+				map("gr", require("telescope.builtin").lsp_references)
+				map("gd", require("telescope.builtin").lsp_definitions)
+				map("gI", require("telescope.builtin").lsp_implementations)
+				map("<leader>d", require("telescope.builtin").diagnostics)
+			end,
+		})
+	end,
+}

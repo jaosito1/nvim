@@ -9,6 +9,9 @@ vim.keymap.set("n", "<leader>o", ":update <CR>:source<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.keymap.set("v", "<C-d>", "<C-d>zz")
+vim.keymap.set("v", "<C-u>", "<C-u>zz")
+
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-h>", "<C-w>h")

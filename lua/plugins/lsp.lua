@@ -30,6 +30,7 @@ return {
 
 				map("gr", require("telescope.builtin").lsp_references)
 				map("gd", require("telescope.builtin").lsp_definitions)
+				map("gt", require("telescope.builtin").lsp_type_definitions)
 				map("gI", require("telescope.builtin").lsp_implementations)
 				map("<leader>d", require("telescope.builtin").diagnostics)
 			end,

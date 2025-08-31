@@ -16,8 +16,4 @@ return {
 	{
 		"mbbill/undotree",
 	},
-	{
-		"karb94/neoscroll.nvim",
-		opts = {},
-	},
 }

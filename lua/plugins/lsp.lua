@@ -18,7 +18,7 @@ return {
 		vim.diagnostic.config({
 			virtual_text = true,
 			severity_sort = true,
-			float = { border = "rounded", source = "if_many" },
+			float = { border = "rounded" },
 			underline = false,
 		})
 
@@ -32,7 +32,9 @@ return {
 				map("gd", require("telescope.builtin").lsp_definitions)
 				map("gt", require("telescope.builtin").lsp_type_definitions)
 				map("gI", require("telescope.builtin").lsp_implementations)
-				map("<leader>d", require("telescope.builtin").diagnostics)
+				map("<leader>D", require("telescope.builtin").diagnostics)
+
+				map("<leader>d", vim.diagnostic.open_float)
 			end,
 		})
 	end,

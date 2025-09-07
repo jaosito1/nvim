@@ -16,4 +16,8 @@ return {
 	{
 		"mbbill/undotree",
 	},
+	{
+		"norcalli/nvim-colorizer.lua",
+		opts = {},
+	},
 }

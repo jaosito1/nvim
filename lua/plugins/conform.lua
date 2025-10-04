@@ -7,6 +7,7 @@ return {
 				go = { "goimports", "gofmt" },
 				html = { "prettier" },
 				css = { "prettier" },
+				python = { "ruff" },
 			},
 		})
 

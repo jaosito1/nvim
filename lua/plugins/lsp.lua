@@ -11,6 +11,7 @@ return {
 					"bashls",
 					"html",
 					"cssls",
+					"ts_ls",
 				},
 			},
 		},

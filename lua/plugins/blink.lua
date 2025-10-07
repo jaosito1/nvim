@@ -15,8 +15,9 @@ return {
 		},
 		completion = { documentation = { auto_show = true } },
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "path", "snippets" },
 		},
+		signature = { enabled = true },
 	},
 	opts_extend = { "sources.default" },
 }

@@ -6,12 +6,17 @@ return {
 			"mason-org/mason-lspconfig.nvim",
 			opts = {
 				ensure_installed = {
+					-- LSPs
 					"lua_ls",
 					"gopls",
 					"bashls",
 					"html",
 					"cssls",
 					"ts_ls",
+
+					-- Linters and formatters
+					"stylua",
+					"ruff",
 				},
 			},
 		},

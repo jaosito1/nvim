@@ -17,4 +17,8 @@ return {
 	{
 		"sainnhe/everforest",
 	},
+    {
+        "catppuccin/nvim",
+        name = "catppuccin"
+    }
 }

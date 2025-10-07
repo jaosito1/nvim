@@ -5,9 +5,10 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				go = { "goimports", "gofmt" },
+				python = { "ruff" },
 				html = { "prettier" },
 				css = { "prettier" },
-				python = { "ruff" },
+				javascript = { "prettier" },
 			},
 		})
 

@@ -17,8 +17,17 @@ return {
 	{
 		"sainnhe/everforest",
 	},
-    {
-        "catppuccin/nvim",
-        name = "catppuccin"
-    }
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+	},
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		opts = {
+			styles = {
+				transparency = true,
+			},
+		},
+	},
 }

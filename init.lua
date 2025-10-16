@@ -2,4 +2,4 @@ require("config.set")
 require("config.keymaps")
 require("config.lazy")
 
-vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme rose-pine")

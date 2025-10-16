@@ -11,6 +11,8 @@ vim.o.expandtab = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.o.guicursor = ""
+
 vim.o.smartindent = true
 vim.o.scrolloff = 8
 

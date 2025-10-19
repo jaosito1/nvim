@@ -13,6 +13,7 @@ return {
 					"html",
 					"cssls",
 					"ts_ls",
+					"pyright",
 
 					-- Linters and formatters
 					"stylua",

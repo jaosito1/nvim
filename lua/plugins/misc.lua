@@ -27,4 +27,7 @@ return {
 		main = "ibl",
 		opts = {},
 	},
+	{
+		"ThePrimeagen/vim-be-good",
+	},
 }

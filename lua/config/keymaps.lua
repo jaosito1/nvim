@@ -20,9 +20,12 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<leader>lv", ":vsplit<CR>")
 vim.keymap.set("n", "<leader>lh", ":split<CR>")
 
+-- navigation for f(char) and t(char)
+vim.keymap.set("n", ";", ",")
+vim.keymap.set("n", "'", ";")
+
 vim.keymap.set("n", ",", ":b #<CR>") -- go to prev. file
-
 vim.keymap.set("v", "<leader>yy", '"+y')
-vim.keymap.set("n", "-", ":Oil<CR>")
 
+vim.keymap.set("n", "-", ":Ex<CR>")
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR> :UndotreeFocus<CR>")

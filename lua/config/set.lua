@@ -11,12 +11,12 @@ vim.o.expandtab = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
-vim.o.guicursor = ""
+vim.o.guicursor = "n:blinkon500-blinkoff500"
+vim.o.cursorline = false
 
 vim.o.smartindent = true
 vim.o.scrolloff = 8
 
-vim.o.cursorline = true
 vim.o.wrap = false
 vim.o.signcolumn = "yes"
 vim.o.showmode = false

@@ -8,7 +8,9 @@ return {
 				python = { "ruff" },
 				html = { "prettier" },
 				css = { "prettier" },
+				json = { "prettier" },
 				javascript = { "prettier" },
+				javascriptreact = { "prettier" },
 			},
 		})
 

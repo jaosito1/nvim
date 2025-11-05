@@ -9,26 +9,22 @@ return {
 					-- LSPs
 					"lua_ls",
 					"gopls",
-					"bashls",
 					"html",
 					"cssls",
 					"ts_ls",
-					"pyright",
+					"tailwindcss",
 
 					-- Linters and formatters
 					"stylua",
-					"ruff",
 				},
 			},
 		},
-		{ "hrsh7th/nvim-cmp" },
 	},
 
 	config = function()
 		vim.diagnostic.config({
 			virtual_text = true,
 			severity_sort = true,
-			float = { border = "rounded" },
 			underline = false,
 		})
 
@@ -46,6 +42,16 @@ return {
 
 				map("<leader>d", vim.diagnostic.open_float)
 			end,
+		})
+
+		vim.lsp.config("lua_ls", {
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
+				},
+			},
 		})
 	end,
 }

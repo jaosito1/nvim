@@ -1,4 +1,7 @@
 return {
+	-- TODO customize to stop bothering with auto suggestion on react files
+	-- jsx, html, css, jx, tsx, ts
+
 	"saghen/blink.cmp",
 	dependencies = { "rafamadriz/friendly-snippets" },
 	version = "1.*",
@@ -16,17 +19,24 @@ return {
 		},
 		completion = {
 			documentation = { auto_show = true },
-			-- menu = {
-			-- -- Add delay for suggestion on .jsx files
-			-- 	 auto_show_delay_ms = function(ctx, items)
-			-- 	 	return vim.bo.filetype == "javascriptreact" and 325 or 0
-			-- 	 end,
-			-- },
 		},
 		sources = {
 			default = { "lsp", "path", "snippets" },
 		},
 		signature = { enabled = true },
+		fuzzy = {
+			sorts = {
+				function(a, b)
+					if (a.client_name == nil or b.client_name == nil) or (a.client_name == b.client_name) then
+						return
+					end
+					return b.client_name == "emmet_ls"
+				end,
+				-- default sorts
+				"score",
+				"sort_text",
+			},
+		},
 	},
 	opts_extend = { "sources.default" },
 }

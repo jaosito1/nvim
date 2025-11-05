@@ -4,8 +4,11 @@ require("config.lazy")
 
 vim.cmd("colorscheme rose-pine")
 
-local yank_group = vim.api.nvim_create_augroup("HighlightYank", {})
-vim.api.nvim_create_autocmd("TextYankPost", {
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+local yank_group = augroup("HighlightYank", {})
+autocmd("TextYankPost", {
 	group = yank_group,
 	pattern = "*",
 	callback = function()
@@ -13,6 +16,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 			higroup = "IncSearch",
 			timeout = 40,
 		})
+	end,
+})
+
+local user_group = augroup("UserGroup", {})
+autocmd("BufEnter", {
+	group = user_group,
+	pattern = "*.tsx,*.jsx,*.html,*.css",
+	callback = function()
+		vim.bo.tabstop = 2
+		vim.bo.softtabstop = 2
+		vim.bo.shiftwidth = 2
 	end,
 })
 

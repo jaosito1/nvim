@@ -27,5 +27,5 @@ vim.keymap.set("n", "'", ";")
 vim.keymap.set("n", ",", ":b #<CR>") -- go to prev. file
 vim.keymap.set("v", "<leader>yy", '"+y')
 
-vim.keymap.set("n", "-", ":Oil<CR>")
+vim.keymap.set("n", "-", "<cmd>Ex<CR>")
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR> :UndotreeFocus<CR>")

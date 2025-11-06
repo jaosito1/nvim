@@ -11,6 +11,9 @@ vim.o.expandtab = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.o.undofile = true
+vim.o.undodir = os.getenv("XDG_CACHE_HOME") .. "/nvim/undodir"
+
 vim.o.guicursor = "n:blinkon500-blinkoff500"
 vim.o.cursorline = false
 

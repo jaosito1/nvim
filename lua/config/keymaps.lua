@@ -1,31 +1,33 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.keymap.set("n", "<leader>w", ":write<CR>")
-vim.keymap.set("n", "<leader>q", ":quit<CR>")
-vim.keymap.set("n", "<leader>Q", ":quitall<CR>")
-vim.keymap.set("n", "<leader>o", ":update <CR>:source<CR>")
+local key = vim.keymap.set
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+key("n", "<leader>w", ":write<CR>")
+key("n", "<leader>q", ":quit<CR>")
+key("n", "<leader>Q", ":quitall<CR>")
 
-vim.keymap.set("v", "<C-d>", "<C-d>zz")
-vim.keymap.set("v", "<C-u>", "<C-u>zz")
+key("v", "J", ":m '>+1<CR>gv=gv")
+key("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+key("n", "J", "mzJ`z")
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+key("v", "<C-d>", "<C-d>zz")
+key("v", "<C-u>", "<C-u>zz")
 
-vim.keymap.set("n", "<leader>lv", ":vsplit<CR>")
-vim.keymap.set("n", "<leader>lh", ":split<CR>")
+key("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+key("n", "<C-k>", "<cmd>cnext<CR>zz")
+key("n", "<C-j>", "<cmd>cprev<CR>zz")
+
+key("n", "<leader>lv", ":vsplit<CR>")
+key("n", "<leader>lh", ":split<CR>")
 
 -- navigation for f(char) and t(char)
-vim.keymap.set("n", ";", ",")
-vim.keymap.set("n", "'", ";")
+key("n", ";", ",")
+key("n", "'", ";")
 
-vim.keymap.set("n", ",", ":b #<CR>") -- go to prev. file
-vim.keymap.set("v", "<leader>yy", '"+y')
+key("n", ",", ":b #<CR>") -- go to prev. file
+key("v", "<leader>yy", '"+y')
 
-vim.keymap.set("n", "-", "<cmd>Ex<CR>")
-vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR> :UndotreeFocus<CR>")
+key("n", "-", "<cmd>Ex<CR>")

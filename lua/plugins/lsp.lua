@@ -1,28 +1,21 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		{ "mason-org/mason.nvim", opts = {} },
-		{ "artemave/workspace-diagnostics.nvim" },
-		{
-			"mason-org/mason-lspconfig.nvim",
-			opts = {
-				ensure_installed = {
-					-- LSPs
-					"lua_ls",
-					"gopls",
-					"html",
-					"cssls",
-					"ts_ls",
-					"tailwindcss",
-
-					-- Linters and formatters
-					"stylua",
-				},
-			},
-		},
+		"mason-org/mason.nvim",
+		"artemave/workspace-diagnostics.nvim",
+		"mason-org/mason-lspconfig.nvim",
 	},
-
 	config = function()
+		require("mason").setup()
+		require("workspace-diagnostics").setup()
+		require("mason-lspconfig").setup({
+			ensure_installed = {
+				"lua_ls", "gopls", "html",
+				"cssls", "ts_ls", "tailwindcss",
+				"prettier", "stylua",
+			},
+		})
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(event)
 				local map = function(keys, action)
@@ -33,9 +26,7 @@ return {
 				map("gd", require("telescope.builtin").lsp_definitions)
 				map("gt", require("telescope.builtin").lsp_type_definitions)
 				map("gI", require("telescope.builtin").lsp_implementations)
-				map("<leader>D", require("telescope.builtin").diagnostics)
-
-				map("<leader>d", vim.diagnostic.open_float)
+                map("<leader>d", vim.diagnostic.open_float)
 			end,
 		})
 
@@ -49,12 +40,11 @@ return {
 			},
 		})
 
-        -- TODO not working :*
-		vim.lsp.config("ts_ls", {
-			on_attach = function(client, bufnr)
-				require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-                print("hello world")
-			end,
-		})
+		-- TODO not working :*
+		-- vim.lsp.config("ts_ls", {
+		-- 	on_attach = function(client, bufnr)
+		-- 		require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+		-- 	end,
+		-- })
 	end,
 }

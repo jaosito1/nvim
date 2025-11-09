@@ -10,9 +10,14 @@ return {
 		require("workspace-diagnostics").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = {
-				"lua_ls", "gopls", "html",
-				"cssls", "ts_ls", "tailwindcss",
-				"prettier", "stylua",
+				"lua_ls",
+				"gopls",
+				"html",
+				"cssls",
+				"ts_ls",
+				"tailwindcss",
+				"prettier",
+				"stylua",
 			},
 		})
 
@@ -26,7 +31,7 @@ return {
 				map("gd", require("telescope.builtin").lsp_definitions)
 				map("gt", require("telescope.builtin").lsp_type_definitions)
 				map("gI", require("telescope.builtin").lsp_implementations)
-                map("<leader>d", vim.diagnostic.open_float)
+				map("<leader>d", vim.diagnostic.open_float)
 			end,
 		})
 
@@ -38,6 +43,10 @@ return {
 					},
 				},
 			},
+		})
+
+		vim.lsp.config("emmet_language_server", {
+			filetypes = { "css", "html", "sass", "scss" },
 		})
 
 		-- TODO not working :*

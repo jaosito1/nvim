@@ -1,14 +1,10 @@
 return {
-	-- TODO customize to stop bothering with auto suggestion on react files
-	-- jsx, html, css, jx, tsx, ts
-
 	"saghen/blink.cmp",
 	dependencies = { "rafamadriz/friendly-snippets" },
 	version = "1.*",
 	opts = {
 		keymap = {
 			preset = "default",
-
 			["<S-Tab>"] = { "select_prev", "fallback" },
 			["<Tab>"] = { "select_next", "fallback" },
 			["<Enter>"] = { "accept", "fallback" },
@@ -19,9 +15,19 @@ return {
 		},
 		completion = {
 			documentation = { auto_show = true },
+			keyword = { range = "full" },
+			menu = {
+				auto_show_delay_ms = function(ctx, items)
+                    local delay_ms = 300
+					return vim.bo.filetype == "javascriptreact" and delay_ms or 0
+				end,
+			},
 		},
 		sources = {
-			default = { "lsp", "path", "snippets" },
+			default = { "lsp", "path", "buffer" },
+			min_keyword_length = function()
+				return vim.bo.filetype == "javascriptreact" and 2 or 0
+			end,
 		},
 		signature = { enabled = true },
 		fuzzy = {

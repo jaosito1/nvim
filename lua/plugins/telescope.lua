@@ -25,12 +25,10 @@ return {
 			},
 		})
 
-		-- TODO change find_files and git_files depending on
-		-- if a git repo exists
-
+		-- TODO change find_files and git_files depending on if a git repo exists
 		local builtin = require("telescope.builtin")
 
-		vim.keymap.set("n", "<C-o>", builtin.git_files)
+		vim.keymap.set("n", "L", builtin.git_files)
 		vim.keymap.set("n", "<leader>fa", builtin.find_files)
 		vim.keymap.set("n", "<leader>fg", function()
 			builtin.grep_string({ search = vim.fn.input("Grep") })

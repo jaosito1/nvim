@@ -2,6 +2,7 @@ return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		{ "mason-org/mason.nvim", opts = {} },
+		{ "artemave/workspace-diagnostics.nvim" },
 		{
 			"mason-org/mason-lspconfig.nvim",
 			opts = {
@@ -22,12 +23,6 @@ return {
 	},
 
 	config = function()
-		vim.diagnostic.config({
-			virtual_text = true,
-			severity_sort = true,
-			underline = false,
-		})
-
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(event)
 				local map = function(keys, action)
@@ -52,6 +47,14 @@ return {
 					},
 				},
 			},
+		})
+
+        -- TODO not working :*
+		vim.lsp.config("ts_ls", {
+			on_attach = function(client, bufnr)
+				require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+                print("hello world")
+			end,
 		})
 	end,
 }

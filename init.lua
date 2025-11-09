@@ -2,7 +2,7 @@ require("config.set")
 require("config.keymaps")
 require("config.lazy")
 
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme vague")
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
@@ -22,7 +22,7 @@ autocmd("TextYankPost", {
 local user_group = augroup("UserGroup", {})
 autocmd("BufEnter", {
 	group = user_group,
-	pattern = "*.tsx,*.jsx,*.html,*.css",
+	pattern = "*.tsx,*.jsx,*.html,*.css,*.js,*.ts",
 	callback = function()
 		vim.bo.tabstop = 2
 		vim.bo.softtabstop = 2

@@ -25,14 +25,16 @@ return {
 
 		vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 
+		local t = require("trouble")
+
 		vim.keymap.set("n", "<leader>ds", function()
-			require("trouble").toggle("diagnostics")
+			t.toggle("diagnostics")
 		end)
 		vim.keymap.set("n", "[d", function()
-			require("trouble").next({ jump = true })
+			t.next({ jump = true })
 		end)
 		vim.keymap.set("n", "]d", function()
-			require("trouble").prev({ jump = true })
+			t.prev({ jump = true })
 		end)
 	end,
 }

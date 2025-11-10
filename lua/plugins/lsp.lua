@@ -4,10 +4,12 @@ return {
 		"mason-org/mason.nvim",
 		"artemave/workspace-diagnostics.nvim",
 		"mason-org/mason-lspconfig.nvim",
+		"j-hui/fidget.nvim",
 	},
 	config = function()
 		require("mason").setup()
 		require("workspace-diagnostics").setup()
+		require("fidget").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls",

@@ -2,6 +2,9 @@ return {
 	{
 		"vague2k/vague.nvim",
 		lazy = false,
+        opts = {
+            transparent = true
+        }
 	},
 	{
 		"rose-pine/neovim",

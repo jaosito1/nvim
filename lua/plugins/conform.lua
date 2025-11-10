@@ -18,6 +18,7 @@ return {
 				python = { "ruff" },
 				javascript = { "prettier" },
 				javascriptreact = { "prettier" },
+				html = { "prettier" },
 			},
 		})
 

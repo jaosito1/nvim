@@ -18,7 +18,6 @@ return {
 				"cssls",
 				"ts_ls",
 				"tailwindcss",
-				"prettier",
 				"stylua",
 			},
 		})

@@ -22,4 +22,9 @@ return {
 	{
 		"ThePrimeagen/vim-be-good",
 	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {},
+	},
 }

@@ -1,13 +1,3 @@
--- local P = {
--- 	"html",
--- 	"css",
--- 	"json",
--- 	"javascript",
--- 	"typescript",
--- 	"javascriptreact",
--- 	"typescriptreact",
--- }
-
 return {
 	"stevearc/conform.nvim",
 	config = function()
@@ -19,6 +9,7 @@ return {
 				javascript = { "prettier" },
 				javascriptreact = { "prettier" },
 				html = { "prettier" },
+				css = { "prettier" },
 			},
 		})
 
@@ -29,8 +20,11 @@ return {
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",
 			callback = function(args)
-				if vim.bo.filetype == "lua" then
-					return
+				local noAutoFormat = { "lua", "html", "css" }
+				for i = 1, #noAutoFormat do
+					if vim.bo.filetype == noAutoFormat[i] then
+						return
+					end
 				end
 
 				require("conform").format({ bufnr = args.buf })

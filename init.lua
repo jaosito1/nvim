@@ -22,7 +22,7 @@ autocmd("TextYankPost", {
 local user_group = augroup("UserGroup", {})
 autocmd("BufEnter", {
 	group = user_group,
-	pattern = "*.tsx,*.jsx,*.html,*.css,*.js,*.ts",
+	pattern = "*.tsx,*.jsx,*.html,*.css,*.js,*.ts,*.tex",
 	callback = function()
 		vim.bo.tabstop = 2
 		vim.bo.softtabstop = 2

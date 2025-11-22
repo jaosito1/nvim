@@ -7,6 +7,7 @@ return {
 		main = "nvim-treesitter.configs",
 		opts = {
 			ensure_installed = {
+                "latex",
 				"lua",
 				"go",
 				"python",
@@ -16,8 +17,13 @@ return {
 			},
 			sync_install = true,
 			auto_install = true,
-			highlight = { enable = true },
-			indent = { enable = true },
+			highlight = {
+				enable = true,
+				disable = { "latex" },
+			},
+			indent = {
+				enable = true,
+			},
 		},
 	},
 	{

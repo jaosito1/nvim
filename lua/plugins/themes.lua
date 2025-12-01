@@ -21,7 +21,12 @@ return {
 		},
 	},
 	{
-		"bluz71/vim-moonfly-colors",
-		name = "moonfly",
+		"aktersnurra/no-clown-fiesta.nvim",
+		config = function()
+			require("no-clown-fiesta").setup({
+				theme = "dark", -- supported themes are: dark, dim, light
+				transparent = false, -- Enable this to disable the bg color
+			})
+		end,
 	},
 }

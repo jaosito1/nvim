@@ -23,7 +23,7 @@ return {
 			underline = false,
 		})
 
-		vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
+		vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float)
 
 		local t = require("trouble")
 

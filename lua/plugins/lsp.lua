@@ -31,7 +31,7 @@ return {
 				map("gr", require("telescope.builtin").lsp_references)
 				map("gd", require("telescope.builtin").lsp_definitions)
 				map("gt", require("telescope.builtin").lsp_type_definitions)
-				map("gI", require("telescope.builtin").lsp_implementations)
+				map("gi", require("telescope.builtin").lsp_implementations)
 				map("<leader>d", vim.diagnostic.open_float)
 			end,
 		})

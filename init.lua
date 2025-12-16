@@ -2,7 +2,7 @@ require("config.set")
 require("config.keymaps")
 require("config.lazy")
 
-vim.cmd("colorscheme vague")
+vim.cmd("colorscheme no-clown-fiesta-dark")
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd

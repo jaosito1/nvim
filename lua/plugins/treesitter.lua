@@ -28,6 +28,9 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		opts = {},
+		opts = {
+            separator = "*",
+            max_lines = 6
+        },
 	},
 }

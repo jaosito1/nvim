@@ -27,4 +27,10 @@ return {
 		main = "ibl",
 		opts = {},
 	},
+	{
+		"folke/zen-mode.nvim",
+        config = function ()
+            vim.keymap.set("n", "<leader>zz", "<cmd>ZenMode<CR>")
+        end
+	},
 }

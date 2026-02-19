@@ -26,3 +26,6 @@ key("n", ",", ":b #<CR>") -- go to prev. file
 key("v", "<leader>yy", '"+y')
 
 key("n", "-", "<cmd>Ex<CR>")
+
+-- maybe??
+key("n", "<esc>", "<cmd>nohl<CR>")

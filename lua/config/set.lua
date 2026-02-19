@@ -25,7 +25,7 @@ vim.o.showmode = false
 
 vim.o.colorcolumn = "80"
 
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 vim.o.incsearch = true
 
 vim.o.swapfile = false

@@ -23,9 +23,14 @@ key("n", "'", ",") -- navigation for f / F
 
 key("n", ",", ":b #<CR>") -- go to prev. file
 
+key("x", "<leader>p", [["_dP]]) -- paste without losing yank
+
 key("v", "<leader>yy", '"+y')
 
 key("n", "-", "<cmd>Ex<CR>")
+-- key("n", "-", "<CMD>Oil<CR>")
 
 -- maybe??
 key("n", "<esc>", "<cmd>nohl<CR>")
+
+key("n", "<leader>ee", "oif err != nil {<CR>}<ESC>Oreturn err<ESC>")

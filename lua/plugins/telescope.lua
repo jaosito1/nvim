@@ -35,5 +35,11 @@ return {
 		end)
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 		vim.keymap.set("n", "<leader>ft", builtin.colorscheme, { desc = "Telescope colorschemes" })
+
+		vim.keymap.set("n", "<leader>ep", function()
+            builtin.find_files {
+                cwd  = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
+            }
+		end)
 	end,
 }

@@ -11,7 +11,7 @@ return {
         name = "rose-pine",
         opts = {
             styles = {
-                transparency = false,
+                transparency = true,
             },
             palette = {
                 main = {
@@ -25,14 +25,14 @@ return {
         config = function()
             require("no-clown-fiesta").setup({
                 theme = "dark", -- supported themes are: dark, dim, light
-                transparent = false, -- Enable this to disable the bg color
+                transparent = true, -- Enable this to disable the bg color
             })
         end,
     },
     {
         "oskarnurm/koda.nvim",
         config = function()
-            -- require("koda").setup({ transparent = true })
+            require("koda").setup({ transparent = true })
         end,
     }
 }

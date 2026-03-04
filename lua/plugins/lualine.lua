@@ -6,7 +6,7 @@ return {
 			disabled_filetypes = { "neo-tree" },
 			component_separators = { left = "|", right = "|" },
 			section_separators = { left = "", right = "" },
-			theme = "iceberg_dark",
+			theme = "nord",
 		},
 		sections = {
 			lualine_a = { "mode" },

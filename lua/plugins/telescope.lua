@@ -16,30 +16,35 @@ return {
 			},
 			pickers = {
 				find_files = {
+					theme = "cursor",
+				},
+				live_grep = {
 					theme = "ivy",
 				},
-
-				live_grep = {
+				git_files = {
 					theme = "ivy",
 				},
 			},
 		})
 
-		-- TODO change find_files and git_files depending on if a git repo exists
 		local builtin = require("telescope.builtin")
 
-		vim.keymap.set("n", "L", builtin.git_files)
-		vim.keymap.set("n", "<leader>fa", builtin.find_files)
-		vim.keymap.set("n", "<leader>fg", function()
+		vim.keymap.set("n", "L", builtin.find_files)
+		vim.keymap.set("n", "F", builtin.git_files)
+
+		vim.keymap.set("n", "<leader>ffg", function()
 			builtin.grep_string({ search = vim.fn.input("Grep -> ") })
 		end)
+		vim.keymap.set("n", "<leader>fg", builtin.live_grep)
+
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 		vim.keymap.set("n", "<leader>ft", builtin.colorscheme, { desc = "Telescope colorschemes" })
 
+		-- Search through nvim plugin files
 		vim.keymap.set("n", "<leader>ep", function()
-            builtin.find_files {
-                cwd  = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
-            }
+			builtin.find_files({
+				cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
+			})
 		end)
 	end,
 }

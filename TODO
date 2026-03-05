@@ -1,8 +1,0 @@
- 1. Restart Neovim - If you've recently installed/updated opencode or modified your shell config,
- restart Neovim to pick up the new PATH.
-
- 2. Ensure PATH is set before Neovim starts - Make sure /Users/jos/.opencode/bin is in your PATH
- before launching Neovim. Check your shell config files (~/.zshrc, ~/.bashrc, etc.)
-
- 3. Set PATH in Neovim config - Add this to your Neovim init.lua before the 99 plugin loads:
-       vim.env.PATH = vim.env.HOME .. "/.opencode/bin:" .. vim.env.PATH

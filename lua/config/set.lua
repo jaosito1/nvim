@@ -32,5 +32,5 @@ vim.o.swapfile = false
 vim.o.backup = false
 vim.o.confirm = true
 
-vim.o.winborder = "rounded"
+-- vim.o.winborder = "rounded"
 vim.o.autoread = true

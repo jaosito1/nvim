@@ -3,8 +3,8 @@ vim.g.maplocalleader = " "
 
 local key = vim.keymap.set
 
-key("n", "<leader>w", ":write<CR>")
-key("n", "<leader>q", ":quit<CR>")
+key("n", "<leader>w", "<CMD>w<CR>")
+key("n", "<leader>q", "<CMD>q<CR>")
 
 key("v", "J", ":m '>+1<CR>gv=gv")
 key("v", "K", ":m '<-2<CR>gv=gv")
@@ -27,10 +27,6 @@ key("x", "<leader>p", [["_dP]]) -- paste without losing yank
 
 key("v", "<leader>yy", '"+y')
 
-key("n", "-", "<cmd>Ex<CR>")
--- key("n", "-", "<CMD>Oil<CR>")
-
--- maybe??
 key("n", "<esc>", "<cmd>nohl<CR>")
 
 key("n", "<leader>ee", "oif err != nil {<CR>}<ESC>Oreturn err<ESC>")

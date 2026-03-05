@@ -2,7 +2,7 @@ return {
 	"saghen/blink.cmp",
 	version = "1.*",
 	opts = {
-		-- TODO check if C-y to accept feels less annoying
+		-- TODO: check if C-y to accept feels less annoying
 		-- or just keep enter but with preselect on false
 		keymap = {
 			preset = "default",

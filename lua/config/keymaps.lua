@@ -6,6 +6,10 @@ local key = vim.keymap.set
 key("n", "<leader>w", "<CMD>w<CR>")
 key("n", "<leader>q", "<CMD>q<CR>")
 
+key("n", "<leader>wn", "<CMD>:vsplit<CR>")
+key("n", "<leader>wh", "<CMD>vertical res -5<CR>")
+key("n", "<leader>wl", "<CMD>vertical res +5<CR>")
+
 key("v", "J", ":m '>+1<CR>gv=gv")
 key("v", "K", ":m '<-2<CR>gv=gv")
 

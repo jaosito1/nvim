@@ -9,7 +9,7 @@ return {
 		},
 		lazy = false, -- neo-tree will lazily load itself
 		config = function()
-			vim.keymap.set("n", "-", "<CMD>Neotree toggle filesystem<CR>")
+			vim.keymap.set("n", "-", "<CMD>Neotree toggle filesystem reveal<CR>")
 
 			require("neo-tree").setup({
 				close_if_last_window = true,

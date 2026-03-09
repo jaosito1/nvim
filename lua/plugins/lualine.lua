@@ -7,7 +7,7 @@ return {
 			white = "#fafafa",
 			green = "#5e6b65",
 			beige = "#e6dfd0",
-            yellow = "#af8700",
+			yellow = "#af8700",
 			red = "#af5f5f",
 		}
 
@@ -21,11 +21,12 @@ return {
 				z = { bg = colors.main_bg, fg = colors.white },
 			},
 			insert = {
-				a = { bg = colors.main_bg, fg = colors.green },
+				a = { bg = colors.main_bg, fg = colors.white },
 				z = { bg = colors.main_bg, fg = colors.white },
 			},
 			visual = {
-				a = { bg = colors.main_bg, fg = colors.beige },
+				a = { bg = colors.main_bg, fg = colors.white },
+				z = { bg = colors.main_bg, fg = colors.white },
 			},
 		}
 

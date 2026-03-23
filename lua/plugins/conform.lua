@@ -22,7 +22,7 @@ return {
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",
 			callback = function(args)
-				local noAutoFormat = { "lua", "html", "css" }
+				local noAutoFormat = { "lua", "html", "css", "python" }
 				for i = 1, #noAutoFormat do
 					if vim.bo.filetype == noAutoFormat[i] then
 						return
